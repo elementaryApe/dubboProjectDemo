@@ -12,7 +12,10 @@
         <module>dubbo_project_core_service</module>
     </modules>
     <packaging>pom</packaging>
-
+    <!--项目统一字符集编码-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <description>业务核心</description>
 
