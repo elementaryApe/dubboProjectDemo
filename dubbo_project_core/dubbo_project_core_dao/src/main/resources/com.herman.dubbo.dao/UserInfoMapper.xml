@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.herman.dubbo.dao.UserInfoMapper">
+    <resultMap id="BaseResultMap" type="com.herman.dubbo.model.UserInfo">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="phone" property="phone" jdbcType="VARCHAR"/>
+        <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="avatar" property="avatar" jdbcType="VARCHAR"/>
+        <result column="user_source" property="userSource" jdbcType="VARCHAR"/>
+        <result column="id_card" property="idCard" jdbcType="VARCHAR"/>
+        <result column="real_name" property="realName" jdbcType="VARCHAR"/>
+        <result column="bank_card" property="bankCard" jdbcType="VARCHAR"/>
+        <result column="bank_phone" property="bankPhone" jdbcType="VARCHAR"/>
+        <result column="bank_open" property="bankOpen" jdbcType="VARCHAR"/>
+        <result column="product" property="product" jdbcType="VARCHAR"/>
+        <result column="birthday" property="birthday" jdbcType="DATE"/>
+        <result column="province" property="province" jdbcType="VARCHAR"/>
+        <result column="city" property="city" jdbcType="VARCHAR"/>
+        <result column="area" property="area" jdbcType="VARCHAR"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="is_deleted" property="isDeleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Query_User_Where">
+        <where>
+            is_deleted = 0
+            <if test="id != null and id != ''">
+                AND id = #{id,jdbcType=VARCHAR}
+            </if>
+            <if test="name != null and name != ''">
+                AND `name` = #{name,jdbcType=VARCHAR}
+            </if>
+            <if test="phone != null and phone != ''">
+                AND phone = #{phone,jdbcType=VARCHAR}
+            </if>
+            <if test="email != null and id != ''">
+                AND email = #{email,jdbcType=VARCHAR}
+            </if>
+            <if test="password != null and password != ''">
+                AND password = #{password,jdbcType=VARCHAR}
+            </if>
+            <if test="userSource != null and userSource != ''">
+                AND user_source = #{userSource,jdbcType=VARCHAR}
+            </if>
+            <if test="idCard != null and idCard != ''">
+                AND id_card = #{idCard,jdbcType=VARCHAR}
+            </if>
+            <if test="realName != null and realName != ''">
+                AND real_name = #{realName,jdbcType=VARCHAR}
+            </if>
+            <if test="birthday != null">
+                AND birthday = #{birthday,jdbcType=DATE}
+            </if>
+            <if test="province != null and province != ''">
+                AND province = #{province,jdbcType=VARCHAR}
+            </if>
+            <if test="city != null and city != ''">
+                AND city = #{city,jdbcType=VARCHAR}
+            </if>
+            <if test="area != null and area != ''">
+                AND area = #{area,jdbcType=VARCHAR}
+            </if>
+            <if test="address != null and address != ''">
+                AND address = #{address,jdbcType=VARCHAR}
+            </if>
+            <if test="product != null and product != ''">
+                AND product = #{product,jdbcType=VARCHAR}
+            </if>
+            <if test="createTime != null">
+                AND DATE_FORMAT(create_time,'%Y-%m-%d') = DATE_FORMAT(#{createTime,jdbcType=TIMESTAMP},'%Y-%m-%d')
+            </if>
+            <if test="updateTime != null">
+                AND update_time = #{updateTime,jdbcType=TIMESTAMP}
+            </if>
+        </where>
+    </sql>
+
+    <sql id="Base_Column_List">
+        id, `name`, phone, email, password, avatar, user_source,id_card, real_name,
+        birthday, province, city, area, address, create_time, update_time,is_deleted,bank_card,bank_phone,bank_open,product
+    </sql>
+
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM user_info
+        WHERE id = #{id,jdbcType=VARCHAR} AND is_deleted = 0
+    </select>
+
+
+</mapper>
