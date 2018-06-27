@@ -12,5 +12,11 @@
     <artifactId>dubbo_project_core_dao</artifactId>
     <packaging>jar</packaging>
     <description>dao层操作</description>
-
+    <dependencies>
+        <dependency>
+            <groupId>com.herman</groupId>
+            <artifactId>dubbo_project_base</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

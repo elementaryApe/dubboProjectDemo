@@ -1,0 +1,30 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="dubbo_project_web:war exploded">
+    <output-path>$PROJECT_DIR$/dubbo_project_web/target/dubbo_project_web</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="dubbo_project_web" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="dubbo_project_core_service-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="dubbo_project_core_service" />
+          </element>
+          <element id="archive" name="dubbo_project_common-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="dubbo_project_common" />
+          </element>
+          <element id="archive" name="dubbo_project_core_dao-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="dubbo_project_core_dao" />
+          </element>
+          <element id="archive" name="dubbo_project_base-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="dubbo_project_base" />
+          </element>
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/dubbo_project_web/target/dubbo_project_web/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="dubbo_project_web/web/Web" />
+    </root>
+  </artifact>
+</component>
