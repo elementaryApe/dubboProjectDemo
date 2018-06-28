@@ -1,5 +1,6 @@
 package com.herman.dubbo.controller;
 
+import com.herman.dubbo.api.DubboApiProvider;
 import com.herman.dubbo.model.Result;
 import com.herman.dubbo.model.UserInfo;
 import com.herman.dubbo.service.UserInfoService;
@@ -15,8 +16,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("user")
 public class UserInfoController {
 
-    @Autowired
-    private UserInfoService userInfoService;
 
     @RequestMapping(value = "{userId}", method = RequestMethod.GET)
     @ResponseBody
@@ -24,7 +23,7 @@ public class UserInfoController {
                                   @RequestParam(value = "status", required = false) String status) {
         Result<UserInfo> result = new Result<>();
         try {
-            UserInfo userInfo = userInfoService.getUserInfoByUserId(userId);
+            UserInfo userInfo = DubboApiProvider.userinfoService.getUserInfoByUserId(userId);
             result.setResult(userInfo);
             result.isSuccess(Boolean.TRUE);
             result.setMessage("成功");
@@ -41,7 +40,7 @@ public class UserInfoController {
     public Result userExits(@PathVariable("userId") String userId) {
         Result<Boolean> result = new Result<>();
         try {
-            result.setResult(userInfoService.userExits(userId));
+            result.setResult( DubboApiProvider.userinfoService.userExits(userId));
             result.isSuccess(Boolean.TRUE);
             result.setMessage("成功");
         } catch (Exception e) {
@@ -57,7 +56,7 @@ public class UserInfoController {
     public Result getUserName(@RequestParam("userId") String userId) {
         Result<String> result = new Result<>();
         try {
-            result.setResult(userInfoService.getUserName(userId));
+            result.setResult( DubboApiProvider.userinfoService.getUserName(userId));
             result.isSuccess(Boolean.TRUE);
             result.setMessage("成功");
         } catch (Exception e) {

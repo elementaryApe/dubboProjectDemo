@@ -13,6 +13,8 @@
         <module>dubbo_project_base</module>
         <module>dubbo_project_core</module>
         <module>dubbo_project_web</module>
+        <module>dubbo_project_provider</module>
+        <module>dubbo_project_consumer</module>
     </modules>
     <packaging>pom</packaging>
     <!--项目统一字符集编码-->
