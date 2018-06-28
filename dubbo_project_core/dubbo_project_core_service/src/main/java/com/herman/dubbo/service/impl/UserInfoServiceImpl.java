@@ -19,4 +19,18 @@ public class UserInfoServiceImpl implements UserInfoService {
     public UserInfo getUserInfoByUserId(String userInfoId) throws Exception {
         return userInfoMapper.selectByPrimaryKey(userInfoId);
     }
+
+    @Override
+    public boolean userExits(String userId) throws Exception {
+        return userInfoMapper.selectByPrimaryKey(userId) == null;
+    }
+
+    @Override
+    public String getUserName(String userId) throws Exception {
+        if (userExits(userId)) {
+            String name = getUserInfoByUserId(userId).getName();
+            return  name== null ? "没有起名字" : name;
+        }
+        return null;
+    }
 }

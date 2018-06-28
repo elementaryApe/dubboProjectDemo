@@ -10,16 +10,19 @@
         <module name="dubbo_project_common" />
         <module name="dubbo_project_core_dao" />
         <module name="dubbo_project_core_service" />
+        <module name="dubbo_project_model" />
         <module name="dubbo_project_web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="dubbo_project_base" target="1.5" />
-      <module name="dubbo_project_common" target="1.5" />
-      <module name="dubbo_project_core" target="1.5" />
-      <module name="dubbo_project_core_dao" target="1.5" />
-      <module name="dubbo_project_core_service" target="1.5" />
-      <module name="dubbo_project_web" target="1.7" />
+      <module name="dubbo_project_base" target="1.8" />
+      <module name="dubbo_project_common" target="1.8" />
+      <module name="dubbo_project_core" target="1.8.0_112-release" />
+      <module name="dubbo_project_core_dao" target="1.8" />
+      <module name="dubbo_project_core_service" target="1.8" />
+      <module name="dubbo_project_model" target="1.8" />
+      <module name="dubbo_project_parent" target="1.8.0_112-release" />
+      <module name="dubbo_project_web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

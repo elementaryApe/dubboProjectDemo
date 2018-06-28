@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/dubboProjectDemo.iml" filepath="$PROJECT_DIR$/.idea/dubboProjectDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo_project_base/dubbo_project_base.iml" filepath="$PROJECT_DIR$/dubbo_project_base/dubbo_project_base.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo_project_common/dubbo_project_common.iml" filepath="$PROJECT_DIR$/dubbo_project_common/dubbo_project_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo_project_core/dubbo_project_core.iml" filepath="$PROJECT_DIR$/dubbo_project_core/dubbo_project_core.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo_project_core/dubbo_project_core_dao/dubbo_project_core_dao.iml" filepath="$PROJECT_DIR$/dubbo_project_core/dubbo_project_core_dao/dubbo_project_core_dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo_project_core/dubbo_project_core_service/dubbo_project_core_service.iml" filepath="$PROJECT_DIR$/dubbo_project_core/dubbo_project_core_service/dubbo_project_core_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo_project_model/dubbo_project_model.iml" filepath="$PROJECT_DIR$/dubbo_project_model/dubbo_project_model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo_project_parent.iml" filepath="$PROJECT_DIR$/dubbo_project_parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo_project_web/dubbo_project_web.iml" filepath="$PROJECT_DIR$/dubbo_project_web/dubbo_project_web.iml" />
     </modules>
   </component>

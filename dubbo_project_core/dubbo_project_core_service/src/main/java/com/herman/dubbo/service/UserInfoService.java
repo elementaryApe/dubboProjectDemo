@@ -12,4 +12,8 @@ public interface UserInfoService {
      * 根据用户ID获取用户
      */
     UserInfo getUserInfoByUserId(String userInfoId) throws Exception;
+
+    boolean userExits(String userId) throws Exception;
+
+    String getUserName(String userId) throws Exception;
 }

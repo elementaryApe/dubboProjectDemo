@@ -34,6 +34,37 @@ public class UserInfoController {
             return result;
         }
         return result;
+    }
 
+    @RequestMapping(value = "/exist/{userId}", method = RequestMethod.GET)
+    @ResponseBody
+    public Result userExits(@PathVariable("userId") String userId) {
+        Result<Boolean> result = new Result<>();
+        try {
+            result.setResult(userInfoService.userExits(userId));
+            result.isSuccess(Boolean.TRUE);
+            result.setMessage("成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            result.setMessage("出错了！");
+            return result;
+        }
+        return result;
+    }
+
+    @RequestMapping(value = "name", method = RequestMethod.GET)
+    @ResponseBody
+    public Result getUserName(@RequestParam("userId") String userId) {
+        Result<String> result = new Result<>();
+        try {
+            result.setResult(userInfoService.getUserName(userId));
+            result.isSuccess(Boolean.TRUE);
+            result.setMessage("成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            result.setMessage("出错了！");
+            return result;
+        }
+        return result;
     }
 }
