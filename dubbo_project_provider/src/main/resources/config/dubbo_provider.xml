@@ -22,7 +22,7 @@
     <dubbo:application name="${rpc.dubbo.application.name}" owner="${rpc.dubbo.application.owner}" />
 
     <!-- 使用multicast广播注册中心暴露服务地址 -->
-    <dubbo:registry address="${rpc.dubbo.registry.address}" timeout="50000" />
+    <dubbo:registry protocol="${rpc.dubbo.protocol.regist}" address="${rpc.dubbo.registry.address}" timeout="50000" />
 
     <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="${rpc.dubbo.protocol.name}" port="${rpc.dubbo.protocol.port}" />
