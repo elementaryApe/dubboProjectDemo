@@ -3,8 +3,6 @@ package com.herman.dubbo.controller;
 import com.herman.dubbo.api.DubboApiProvider;
 import com.herman.dubbo.model.Result;
 import com.herman.dubbo.model.UserInfo;
-import com.herman.dubbo.service.UserInfoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,7 +38,7 @@ public class UserInfoController {
     public Result userExits(@PathVariable("userId") String userId) {
         Result<Boolean> result = new Result<>();
         try {
-            result.setResult( DubboApiProvider.userinfoService.userExits(userId));
+            result.setResult(DubboApiProvider.userinfoService.userExits(userId));
             result.isSuccess(Boolean.TRUE);
             result.setMessage("成功");
         } catch (Exception e) {
@@ -56,7 +54,7 @@ public class UserInfoController {
     public Result getUserName(@RequestParam("userId") String userId) {
         Result<String> result = new Result<>();
         try {
-            result.setResult( DubboApiProvider.userinfoService.getUserName(userId));
+            result.setResult(DubboApiProvider.userinfoService.getUserName(userId));
             result.isSuccess(Boolean.TRUE);
             result.setMessage("成功");
         } catch (Exception e) {
